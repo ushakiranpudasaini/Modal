@@ -1,0 +1,90 @@
+<html class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                },
+                fontFamily: {
+                    poppins: ['Poppins', 'sans-serif'],
+                    Montserrat: ['Montserrat', 'sans-serif']
+                },
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins&display=swap" rel="stylesheet">
+    <title>
+        modal5
+    </title>
+</head>
+
+<body class="dark:bg-gray-800">
+    <section class="flex items-center h-screen bg-gray-100 font-poppins dark:bg-gray-900 ">
+        <div class="justify-center flex-1 max-w-6xl py-4 mx-auto text-center lg:py-10 ">
+            <div class="" x-data="{ open: false }">
+                <button
+                    class="px-4 py-2 text-white bg-blue-500 rounded-md select-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 hover:bg-blue-600"
+                    @click="open = true">Open Modal</button>
+                <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full"
+                    style="background-color: rgba(0,0,0,.5);" x-show="open">
+                    <div class="h-auto p-6 mx-2 text-left bg-white rounded-md shadow-xl dark:bg-gray-800 md:max-w-4xl "
+                        @click.away="open = false">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="p-2 bg-blue-100 rounded-full dark:bg-gray-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="w-6 h-6 text-blue-500 dark:text-gray-400 bi bi-lock-fill"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                                </svg>
+                            </div>
+                            <button @click="open = false"
+                                class="border border-transparent dark:text-gray-400 hover:text-blue-600 dark:hover:text-gray-300"
+                                type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="w-8 h-8 bi bi-x" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="mb-6 leading-normal text-center">
+                            <h1 class="mb-2 text-lg font-bold text-gray-700 dark:text-gray-300 ">This content is
+                                password protected.</h1>
+                            <p class="mb-6 text-sm font-medium text-gray-400 dark:text-gray-300 ">Lorem ipsum dor ispum
+                                amit.</p>
+                            <input
+                                class="w-full p-3 text-sm font-medium bg-gray-100 border rounded-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700 focus:border-blue "
+                                name="password" type="password" placeholder="Enter your password">
+                        </div>
+                        <span class="justify-center block gap-3 rounded-md shadow-sm md:flex">
+                            <button @click="open = false"
+                                class="inline-flex justify-center w-full px-4 py-2 mb-4 text-blue-500 border border-blue-500 rounded-md dark:hover:bg-blue-400 dark:text-blue-400 dark:hover:text-gray-100 dark:border-blue-400 md:mb-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 hover:text-gray-100 hover:bg-blue-600">
+                                Cancel
+                            </button>
+                            <button
+                                class="inline-flex justify-center w-full px-4 py-2 text-white bg-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 dark:hover:bg-blue-400 focus:ring-blue-600 hover:bg-blue-600">
+                                Submit
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+
+</html>
